@@ -67,6 +67,8 @@ data/*
 *.binaryproto
 *leveldb
 *lmdb
+*.npy
+*.png
 
 # build, distribute, and bins (+ python proto bindings)
 build
