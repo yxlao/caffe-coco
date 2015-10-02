@@ -25,17 +25,12 @@ label_dir = '%s/preprocessed/labelmap/%s' % (coco_root, data_type)
 if not os.path.exists(label_dir):
     os.makedirs(label_dir)
 
-# load annotations
+# load annotations and get img_ids
 coco = COCO(annFile)
-cat_ids = coco.getCatIds()
-cat_dict = {}
-for k, cat_id in enumerate(cat_ids):
-    cat_dict[cat_id] = k + 1
+img_ids = coco.getImgIds()
 
 # get name of images
 f = open(data_type + '_image_gt_list.txt','w')
-
-img_ids = coco.getImgIds()
 for img_id in img_ids:
     img = coco.loadImgs(img_id)[0]
     # get paths
@@ -43,3 +38,12 @@ for img_id in img_ids:
     labelmap_path = labelmap_root + img['file_name'][:-3] + 'png'
     f.write(image_path + ' ' + labelmap_path + '\n')
 f.close()
+
+# get image height and width statistics
+heights = []
+widths = []
+for img_id in img_ids:
+    img = coco.loadImgs(img_id)[0]
+    heights.append(img['height'])
+    widths.append(img['width'])
+
