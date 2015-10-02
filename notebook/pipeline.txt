@@ -1,0 +1,11 @@
+1. create pairs like this:
+a.png a_gt.png
+using find .. > img.txt, (sort) and "paste -d" " img.txt gt.txt"
+
+2. write a train_val prototxt, change data path.
+recommend: FCN-32S https://gist.github.com/shelhamer/80667189b218ad570e82#file-readme-md
+
+3. change image_labelmap_data_layer
+encoded_gt/255 remove this.
+
+
