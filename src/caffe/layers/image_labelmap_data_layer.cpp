@@ -207,7 +207,7 @@ void ImageLabelmapDataLayer<Dtype>::load_batch(LabelmapBatch<Dtype>* batch) {
     
     cv::Mat encoded_gt;
     //regression
-    encoded_gt = cv_gt/255;
+    encoded_gt = cv_gt;
     //[***Cautions***]
     //One small trick leveraging opencv roundoff feature for **consensus sampling** in Holistically-Nested Edge Detection paper.
     //For general binary edge maps this is okay
