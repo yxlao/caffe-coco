@@ -14,16 +14,11 @@ import cv2
 import matplotlib.pyplot as plt
 
 # dirs
-data_type = 'val2014'
+data_type = 'train2014'
 coco_root = '/home/x6huang/data/coco/'
 annFile = '%s/annotations/instances_%s.json' % (coco_root, data_type)
-image_root = coco_root + 'images/' + data_type + '/'
-labelmap_root = coco_root + 'preprocessed/labelmap/' + data_type + '/'
-
-# output dir
-label_dir = '%s/preprocessed/labelmap/%s' % (coco_root, data_type)
-if not os.path.exists(label_dir):
-    os.makedirs(label_dir)
+image_root = coco_root + 'images-resized/' + data_type + '/'
+labelmap_root = coco_root + 'preprocessed/labelmap-resized/' + data_type + '/'
 
 # load annotations and get img_ids
 coco = COCO(annFile)
