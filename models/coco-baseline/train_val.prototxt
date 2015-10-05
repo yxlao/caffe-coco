@@ -8,7 +8,7 @@ layer {
     phase: TRAIN
   }
   transform_param {
-    mirror: false
+    mirror: true
     mean_value: 104.00699
     mean_value: 116.66877
     mean_value: 122.67892
@@ -31,7 +31,7 @@ layer {
     phase: TEST
   }
   transform_param {
-    mirror: false
+    mirror: true
     mean_value: 104.00699
     mean_value: 116.66877
     mean_value: 122.67892
