@@ -70,6 +70,8 @@ data/*
 *.npy
 *.png
 
+# notebook, ignore ipnb
+
 # build, distribute, and bins (+ python proto bindings)
 build
 .build_debug/*
